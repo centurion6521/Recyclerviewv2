@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     static final String BASE_URL = "https://pokeapi.co/";
 
     private RecyclerView recyclerView;
-    private com.example.recyclerview.ListAdapter mAdapter;
+    private com.example.recyclerviewv2.ListAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private SharedPreferences sharedPreferences;
     private Gson gson;
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             input.add("Test" + i);
         }*/
         // define an adapter
-        mAdapter = new com.example.recyclerview.ListAdapter(pokemonList);
+        mAdapter = new com.example.recyclerviewv2.ListAdapter(pokemonList);
         recyclerView.setAdapter(mAdapter);
     }
 
