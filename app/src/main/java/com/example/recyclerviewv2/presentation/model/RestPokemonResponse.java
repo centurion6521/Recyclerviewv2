@@ -1,4 +1,4 @@
-package com.example.recyclerviewv2;
+package com.example.recyclerviewv2.presentation.model;
 
 import java.util.List;
 

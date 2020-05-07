@@ -1,4 +1,4 @@
-package com.example.recyclerviewv2;
+package com.example.recyclerviewv2.presentation.model;
 
 public class Pokemon {
     private String name;
@@ -12,5 +12,8 @@ public class Pokemon {
 
     public String getUrl() {
         return url;
+    }
+    public String getTypes() {
+        return types;
     }
 }

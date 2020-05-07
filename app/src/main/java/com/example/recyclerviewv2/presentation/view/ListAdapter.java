@@ -1,4 +1,4 @@
-package com.example.recyclerviewv2;
+package com.example.recyclerviewv2.presentation.view;
 
 
 import android.view.LayoutInflater;
@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.recyclerviewv2.Pokemon;
 import com.example.recyclerviewv2.R;
+import com.example.recyclerviewv2.presentation.model.Pokemon;
 
 import java.util.List;
 
