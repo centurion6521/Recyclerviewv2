@@ -5,6 +5,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface PokeApi {
-    @GET("/api/v2/pokemon?limit=800")
+    @GET("/api/v2/pokemon?limit=964")
     Call<RestPokemonResponse> getPokemonResponse();
 }
