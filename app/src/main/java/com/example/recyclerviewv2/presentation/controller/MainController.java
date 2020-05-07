@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.example.recyclerviewv2.Constants;
+import com.example.recyclerviewv2.Injection;
 import com.example.recyclerviewv2.data.PokeApi;
 import com.example.recyclerviewv2.presentation.model.Pokemon;
 import com.example.recyclerviewv2.presentation.model.RestPokemonResponse;
@@ -48,19 +49,8 @@ public class MainController {
         }
     }
 
-
-
     private void makeApiCall(){
-
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
-
-        PokeApi pokeApi = retrofit.create(PokeApi.class);
-
-        Call<RestPokemonResponse> call = pokeApi.getPokemonResponse();
+        Call<RestPokemonResponse> call = Injection.getPokeApiInstance().getPokemonResponse();
         call.enqueue(new Callback<RestPokemonResponse>() {
             @Override
             public void onResponse(Call<RestPokemonResponse> call, Response<RestPokemonResponse> response) {
@@ -105,7 +95,7 @@ public class MainController {
     }
 
     public void onItemClick(Pokemon pokemon){
-
+        view.navigateToDetails(pokemon);
     }
 
     public void onButtonAClick(){
