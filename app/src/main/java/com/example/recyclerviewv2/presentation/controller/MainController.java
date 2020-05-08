@@ -1,29 +1,18 @@
 package com.example.recyclerviewv2.presentation.controller;
 
-import android.content.Context;
 import android.content.SharedPreferences;
-
 import com.example.recyclerviewv2.Constants;
 import com.example.recyclerviewv2.Injection;
-import com.example.recyclerviewv2.data.PokeApi;
 import com.example.recyclerviewv2.presentation.model.Pokemon;
 import com.example.recyclerviewv2.presentation.model.RestPokemonResponse;
 import com.example.recyclerviewv2.presentation.view.MainActivity;
-
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-
 import java.lang.reflect.Type;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
-import static com.example.recyclerviewv2.Constants.BASE_URL;
 
 public class MainController {
     private SharedPreferences sharedPreferences;
@@ -37,10 +26,6 @@ public class MainController {
     }
 
     public void onStart(){
-        /*sharedPreferences =getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
-        gson = new GsonBuilder()
-                .setLenient()
-                .create();*/
         List<Pokemon> pokemonList = getDataFromCache();
         if(pokemonList!=null){
             view.showList(pokemonList);
@@ -80,7 +65,6 @@ public class MainController {
                 .edit()
                 .putString(Constants.KEY_POKEMON_LIST,jsonString)
                 .apply();
-        //Toast.makeText( this,"List Saved",Toast.LENGTH_SHORT).show();
     }
 
     private List<Pokemon> getDataFromCache(){

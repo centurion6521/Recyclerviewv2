@@ -2,11 +2,9 @@ package com.example.recyclerviewv2;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
 import com.example.recyclerviewv2.data.PokeApi;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -32,7 +30,6 @@ public class Injection {
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create(getGson()))
                     .build();
-
             pokeApiInstance = retrofit.create(PokeApi.class);
         }
 
